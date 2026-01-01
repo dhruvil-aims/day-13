@@ -8,7 +8,7 @@ import axios from "axios";
 //   withCredentials: true,
 // });
 const API = axios.create({
-  baseURL: "https://day-13.onrender.com/",
+  baseURL: "https://day-13.onrender.com",
   withCredentials: true,
 });
 
