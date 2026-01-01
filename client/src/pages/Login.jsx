@@ -21,7 +21,11 @@ export default function Login() {
     }
 
     try {
-      const res = await axios.post("http://localhost:5000/auth/login", {
+      // const res = await axios.post("http://localhost:5000/auth/login", {
+      //   email,
+      //   password,
+      // });
+      const res = await axios.post("https://day-13.onrender.com/auth/login", {
         email,
         password,
       });

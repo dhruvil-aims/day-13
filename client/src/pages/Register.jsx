@@ -1,6 +1,7 @@
 import { Container, TextField, Button, Card, CardContent } from "@mui/material";
 import { useState } from "react";
 import API from "../services/api";
+import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 export default function Register() {
@@ -23,7 +24,8 @@ export default function Register() {
     }
 
     try {
-      await API.post("/auth/register", form);
+      // await API.post("/auth/register", form);
+      await axios.post("https://day-13.onrender.com/auth/register", form);
       alert("Registered successfully");
       navigate("/login");
     } catch (err) {
