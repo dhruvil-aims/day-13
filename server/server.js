@@ -8,7 +8,11 @@ import postRoutes from "./routes/postRoutes.js";
 dotenv.config();
 const app = express();
 
-app.use(cors());
+// app.use(cors());
+app.use(cors({
+  origin: "https://69560aff9980f4adfac4de59--fancy-axolotl-a5aa93.netlify.app"
+}));
+
 app.use(express.json());
 
 mongoose.connect(process.env.MONGO_URI).then(() => console.log("MongoDB connected."));
