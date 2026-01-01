@@ -4,7 +4,8 @@ import axios from "axios";
 //   baseURL: "http://localhost:5000", // your backend
 // });
 const API = axios.create({
-  baseURL: import.meta.env.VITE_API_URL, // your backend
+  baseURL: import.meta.env.VITE_API_URL,
+  withCredentials: true,
 });
 // axios.post(`${import.meta.env.VITE_API_URL}/auth/login`);
 

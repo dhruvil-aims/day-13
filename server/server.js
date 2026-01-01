@@ -10,13 +10,15 @@ const app = express();
 
 // app.use(cors());
 app.use(cors({
-  origin: "https://69560aff9980f4adfac4de59--fancy-axolotl-a5aa93.netlify.app"
+  origin: [
+      "http://localhost:5173", "https://69560aff9980f4adfac4de59--fancy-axolotl-a5aa93.netlify.app"],
+  withCredentials: true,
 }));
 
 app.use(express.json());
 
 // mongoose.connect(process.env.MONGO_URI).then(() => console.log("MongoDB connected."));
-mongoose.connect(process.env.MONGODB_URL).then(() => console.log("MongoDB connected."));
+mongoose.connect(process.env.MONGODB_URI).then(() => console.log("MongoDB connected."));
 console.log("Mongo URL:", process.env.MONGODB_URL);
 app.use("/auth", authRoutes);
 app.use("/posts", postRoutes);
