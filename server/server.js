@@ -9,10 +9,13 @@ dotenv.config();
 const app = express();
 
 // app.use(cors());
+// app.use(cors({
+//   origin: [
+//       "http://localhost:5173", "https://69560aff9980f4adfac4de59--fancy-axolotl-a5aa93.netlify.app"],
+//   withCredentials: true,
+// }));
 app.use(cors({
-  origin: [
-      "http://localhost:5173", "https://69560aff9980f4adfac4de59--fancy-axolotl-a5aa93.netlify.app"],
-  withCredentials: true,
+  origin: "*",
 }));
 
 app.use(express.json());
