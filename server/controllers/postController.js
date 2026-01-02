@@ -95,7 +95,7 @@ export const createPost = async (req, res) => {
       content,
       category,
       tags: tags ? tags.split(",") : [],
-      image: req.file ? `uploads/${req.file.filename}` : null,
+      image: req.file ? req.file?.path : null,
       author: req.user.id,
     });
 
@@ -116,7 +116,7 @@ export const updatePost = async (req, res) => {
     };
 
     if (req.file) {
-      updateData.image = `uploads/${req.file.filename}`;
+      updateData.image = req.file?.path;
     }
 
     const post = await Post.findOneAndUpdate(

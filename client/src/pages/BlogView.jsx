@@ -18,7 +18,7 @@ export default function BlogView() {
       <Typography variant="h3" mt={4}>{post.title}</Typography>
 
       {post.image && (
-        <img src={`https://day-13.onrender.com/${post.image}`} style={{ width: "100%", marginTop: 20, borderRadius: 10 }} />
+        <img src={post.image} style={{ width: "100%", marginTop: 20, borderRadius: 10 }} />
       )}
 
       <div style={{ marginTop: 20 }} dangerouslySetInnerHTML={{ __html: post.content }} />

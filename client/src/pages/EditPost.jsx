@@ -19,7 +19,7 @@ export default function EditPost() {
 
   useEffect(() => {
     if (id) {
-      API.get(`/posts/${id}`).then(res => {setForm(res.data); if(res?.data?.image) setPreview(`https://day-13.onrender.com/${res.data.image}`);});
+      API.get(`/posts/${id}`).then(res => {setForm(res.data); if(res?.data?.image) setPreview(res.data.image);});
       
     }
   }, [id]);

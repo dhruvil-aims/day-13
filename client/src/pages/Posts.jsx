@@ -106,7 +106,7 @@ export default function Posts() {
               //   style={{ width: "100px", borderRadius: 6 }}
               // />
               <img
-                src={`https://day-13.onrender.com/${p.image}`}
+                src={p.image}
                 style={{ width: "100px", borderRadius: 6 }}
               />
             )}

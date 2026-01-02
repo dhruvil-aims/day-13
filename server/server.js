@@ -26,7 +26,7 @@ mongoose.connect(process.env.MONGODB_URL).then(() => console.log("MongoDB connec
 console.log("Mongo URL:", process.env.MONGODB_URL);
 app.use("/auth", authRoutes);
 app.use("/posts", postRoutes);
-app.use("/uploads", express.static("uploads"));
+// app.use("/uploads", express.static("uploads"));
 app.use("/blogs", blogRoutes);
 
 const PORT = process.env.PORT || 5000;

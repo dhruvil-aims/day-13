@@ -45,7 +45,7 @@ export default function Blogs() {
             <Card sx={{ height: 420, display: "flex", flexDirection: "column", borderRadius: 2, boxShadow: 2,}} >
               {/* IMAGE (ALWAYS SAME SIZE) */}
               <Box sx={{ height: 200, backgroundColor: "#f2f2f2" }}>
-                <CardMedia component="img" image={post.image ? `https://day-13.onrender.com/${post.image}` : "https://via.placeholder.com/400x200?text=No+Image"}
+                <CardMedia component="img" image={post.image ? post.image : "https://via.placeholder.com/400x200?text=No+Image"}
                   sx={{ height: "100%", width: "100%", objectFit: "cover",}} />
               </Box>
 
