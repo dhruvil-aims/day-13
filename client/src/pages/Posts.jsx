@@ -101,8 +101,12 @@ export default function Posts() {
 
             {/* IMAGE */}
             {p.image && (
+              // <img
+              //   src={`http://localhost:5000${p.image}`}
+              //   style={{ width: "100px", borderRadius: 6 }}
+              // />
               <img
-                src={`http://localhost:5000${p.image}`}
+                src={`https://day-13.onrender.com/uploads/${p.image}`}
                 style={{ width: "100px", borderRadius: 6 }}
               />
             )}

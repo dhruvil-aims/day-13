@@ -20,7 +20,7 @@ router.post("/", auth, upload.single("image"), async (req, res) => {
     title,
     content,
     category,
-    tags: tags ? tags.split(",").trim() : [],
+    tags: tags ? tags.split(",") : [],
     image: req.file ? `/uploads/${req.file.filename}` : null,
     author: req.user.id,
   });
