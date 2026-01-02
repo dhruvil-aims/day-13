@@ -137,7 +137,7 @@ export default function Posts() {
 
             <Button
               size="small"
-              onClick={() => commentPost(p._id, comment).then(() => { showMessage("Comment added 💬");load();}).catch(() => showMessage("Failed to add comment", "error"))}
+              onClick={() => comment ? commentPost(p._id, comment).then(() => { showMessage("Comment added 💬");load();}).catch(() => showMessage("Failed to add comment", "error")) : showMessage("Comment Field is required.", "error")}
             >
               Comment
             </Button>

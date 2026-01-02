@@ -14,3 +14,7 @@ export const likePost = (id) =>
 
 export const commentPost = (id, text) =>
   API.post(`/posts/${id}/comment`, { text });
+
+export const getBlogs = (page = 1) =>
+  API.get(`/blogs?page=${page}`);
+export const getBlogById = (id) => API.get(`/blogs/${id}`, id);

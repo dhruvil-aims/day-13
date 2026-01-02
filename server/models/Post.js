@@ -23,8 +23,8 @@ const postSchema = new mongoose.Schema(
 
     category: {
       type: String,
-      // required: true,
-      enum: ["Tech", "Life", "Travel", "Other"],
+      required: true,
+      enum: ["Tech", "Life", "Travel", "Sports", "Education", "Nature", "Other"],
     },
 
     tags: [{ type: String }],

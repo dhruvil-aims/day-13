@@ -2,6 +2,7 @@ import express from "express";
 import Post from "../models/Post.js";
 import auth from "../middleware/auth.js";
 import upload from "../middleware/upload.js";
+import { getPosts, getBlogById } from "../controllers/postController.js";
 
 const router = express.Router();
 
@@ -28,26 +29,27 @@ router.post("/", auth, upload.single("image"), async (req, res) => {
   res.status(201).json(post);
 });
 
-router.get("/", async (req, res) => {
-  const { page = 1, search = "", category } = req.query;
-  const limit = 5;
+// router.get("/", async (req, res) => {
+//   const { page = 1, search = "", category } = req.query;
+//   const limit = 5;
 
-  const query = {
-    title: { $regex: search, $options: "i" },
-  };
+//   const query = {
+//     title: { $regex: search, $options: "i" },
+//   };
 
-  if (category) query.category = category;
+//   if (category) query.category = category;
 
-  const posts = await Post.find(query)
-    .populate("author", "name")
-    .sort({ createdAt: -1 })
-    .skip((page - 1) * limit)
-    .limit(limit);
+//   const posts = await Post.find(query)
+//     .populate("author", "name")
+//     .sort({ createdAt: -1 })
+//     .skip((page - 1) * limit)
+//     .limit(limit);
 
-  const total = await Post.countDocuments(query);
+//   const total = await Post.countDocuments(query);
 
-  res.json({ posts, totalPages: Math.ceil(total / limit) });
-});
+//   res.json({ posts, totalPages: Math.ceil(total / limit) });
+// });
+router.get("/", getPosts);
 
 router.get("/:id", async (req, res) => {
   const post = await Post.findById(req.params.id).populate("author", "name");

@@ -60,6 +60,8 @@ import Navbar from "./components/Navbar";
 import Posts from "./pages/Posts";
 import AddPost from "./pages/AddPost";
 import EditPost from "./pages/EditPost";
+import Blogs from "./pages/Blogs";
+import BlogView from "./pages/BlogView";
 
 const PrivateRoute = ({ children }) => {
   const token = localStorage.getItem("token");
@@ -101,6 +103,8 @@ export default function App() {
         />
 
         <Route path="*" element={<Navigate to="/login" />} />
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/blogs/:id" element={<BlogView />} />
       </Routes>
     </>
   );

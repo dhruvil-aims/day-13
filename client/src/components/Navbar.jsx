@@ -50,6 +50,7 @@ export default function Navbar() {
       <div>
         {!token ? (
           <>
+            <Link to="/blogs">Blogs</Link>
             <Link to="/login">Login</Link>
             <Link to="/register">Register</Link>
           </>
