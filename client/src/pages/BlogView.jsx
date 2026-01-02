@@ -18,16 +18,16 @@ export default function BlogView() {
       <Typography variant="h3" mt={4}>{post.title}</Typography>
 
       {post.image && (
-        <img
-          src={`https://day-13.onrender.com/uploads/${post.image}`}
-          style={{ width: "100%", marginTop: 20, borderRadius: 10 }}
-        />
+        <img src={`https://day-13.onrender.com/${post.image}`} style={{ width: "100%", marginTop: 20, borderRadius: 10 }} />
       )}
 
-      <div
-        style={{ marginTop: 20 }}
-        dangerouslySetInnerHTML={{ __html: post.content }}
-      />
+      <div style={{ marginTop: 20 }} dangerouslySetInnerHTML={{ __html: post.content }} />
+      <small>
+        {post.category} | By {post.author?.name}
+      </small><br/>
+      <small>
+        {post?.tags}
+      </small>
     </Container>
   );
 }

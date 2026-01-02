@@ -106,12 +106,12 @@ export default function Posts() {
               //   style={{ width: "100px", borderRadius: 6 }}
               // />
               <img
-                src={`https://day-13.onrender.com/uploads/${p.image}`}
+                src={`https://day-13.onrender.com/${p.image}`}
                 style={{ width: "100px", borderRadius: 6 }}
               />
             )}
 
-            <p>{p.content.replace(/<[^>]+>/g, " ")}</p>
+            <p>{p.content.replace(/<[^>]+>/g, " ").slice(0, 120)}</p>
 
             <small>
               {p.category} | By {p.author?.name}
